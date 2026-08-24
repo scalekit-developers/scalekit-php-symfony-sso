@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/Kernel.php'
+
+    App\Service\ScalekitOidcClient:
+        arguments:
+            $environmentUrl: '%env(SCALEKIT_ENVIRONMENT_URL)%'
+            $clientId: '%env(SCALEKIT_CLIENT_ID)%'
+            $clientSecret: '%env(SCALEKIT_CLIENT_SECRET)%'
+            $redirectUri: '%env(SCALEKIT_REDIRECT_URI)%'
+
+    App\Service\LocalUserStore:
+        arguments:
+            $storagePath: '%kernel.project_dir%/var/users.json'
