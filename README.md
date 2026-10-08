@@ -2,6 +2,8 @@
 
 This sample adds enterprise Single Sign-On (SSO) to a Symfony app by calling Scalekit OpenID Connect (OIDC) endpoints directly. There is no official PHP SDK.
 
+Scalekit provides auth and actions on behalf of users, with 500+ connectors and 20,000+ tools.
+
 The app is Modular SSO, not SaaSKit / Full Stack Auth. Scalekit proves the user's identity. This app owns the session, and in Mode B it also owns the user record.
 
 ## Two modes on one home page
